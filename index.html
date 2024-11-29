@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="libs/jquery-3.7.1.js"></script>
+    <script src="src/global.js"></script>
+</head>
+<body>
+<header>
+    <div class="layout">
+        <h1 style="color: #4dc1ff">Sudoku</h1>
+        <nav>
+            <button class="dark-mode-toggle" id="dark-mode-toggle">
+                <i>⛈️</i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<div id="app">
+    <div class="page main-page">
+        <h1 class="game-title">Sudoku</h1>
+        <input type="text" id="nick-val" placeholder="enter nick . . .">
+        <button class="primary-btn change-dif" data-dif="0">Easy</button>
+        <button class=" primary-btn secondly-btn continue-btn" style="display: none">Continue</button>
+        <button class="primary-btn page-changer start-btn" data-from="main" data-to="game">Start Game</button>
+    </div>
+
+
+    <div class="page game-page" style="display: none">
+        <div class="game-board">
+        </div>
+        <div class="player-info">
+            <div class="info-box">
+                <span class="nick-value">Gao shuheng</span>
+            </div>
+            <div class="info-box" style="display: flex;justify-content: center">
+                <span class="dif-value" style="text-align: center">Very Hard</span>
+            </div>
+            <div class="info-box pause-btn modal-opener" data-which="pause"
+                 style="display: flex;justify-content: center;grid-column: 1/-1">
+                <span class="time-value" style="text-align: center">00:00</span>
+            </div>
+        </div>
+        <div class="numbers">
+            <div class="remove grid">X</div>
+        </div>
+
+        <div class="pause-modal modal" style="display: none">
+            <div class="game-title">Sudoku</div>
+            <div class="pause-inner-modal inner-modal">
+                <button class="resume-btn">Resume</button>
+                <button class="primary-btn to-main" data-from="game">To Main</button>
+            </div>
+        </div>
+        <div class="win-modal modal" style="display: none">
+            <div class="pause-inner-modal inner-modal">
+                <div class="game-title">You Finished !</div>
+                <button class="to-main primary-btn" data-from="game">To Main</button>
+                <button class="next-level primary-btn secondly-btn">next Level</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="src/main.js" type="module"></script>
+</html>
